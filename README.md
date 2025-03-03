@@ -1,6 +1,6 @@
-# 📚 Training Class Notes  
+# 📚 DevOps Training Class Notes  
 
-Welcome to the **Training Class Notes** repository! 🚀  
+Welcome to the **DevOps Training Class Notes** repository! 🚀  
 This repository serves as a structured knowledge base where I document key insights, summaries, and exercises from my training sessions.  
 
 ---
