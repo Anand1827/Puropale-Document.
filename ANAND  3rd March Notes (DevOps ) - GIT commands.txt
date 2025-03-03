@@ -1,0 +1,68 @@
+GIT PROTOCOLS AND COMMANDS
+
+1. GIT PROTOCOLS: HTTP VS. SSH
+Git supports two primary protocols for communication with remote repositories: HTTP and SSH.
+
+• HTTP PROTOCOL:
+- Uses a username and password for authentication.
+- Easier to set up and use, especially for beginners.
+- Requires authentication every time you interact with the remote repository unless a credential manager is used.
+- Less secure compared to SSH since credentials are transmitted more frequently.
+
+• WHEN TO USE HTTP:
+- When working in a corporate environment with proxy restrictions.
+- When SSH access is not available or restricted.
+- When collaborating on open-source projects where contributors don’t need write access.
+
+• SSH PROTOCOL:
+- Uses SSH keys for authentication instead of passwords.
+- More secure and preferred for long-term access.
+- Requires setting up an SSH key pair (public and private keys).
+- Authentication is automatic once the SSH key is set up.
+
+• WHEN TO USE SSH:
+- When working on private repositories that require secure access.
+- When frequent interactions with the remote repository are needed.
+- When using automated deployment scripts or CI/CD pipelines.
+
+2. CREATING AN SSH KEY
+To generate an SSH key, follow these steps:
+1. Open a terminal or command prompt.
+2. Run the following command:
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+3. When prompted, specify a file to save the key (default location is recommended).
+4. Set a passphrase for additional security (optional).
+5. The generated SSH key files are stored in
+clip < ~/.ssh/id_ed25519.pub
+6. Add the public key (`id_rsa.pub`) to your Git hosting provider.
+7. Test the connection using:
+ssh -T git@github.com
+
+3. FOUR REAL-TIME ENVIRONMENTS IN GIT
+1. Development Environment: Where developers write, modify, and test their code.
+2. QA (Quality Assurance) Environment: Used for running automated and manual tests.
+3. UAT (User Acceptance Testing) Environment: A pre-production setup for user testing.
+4. Production Environment: The live environment where the final version runs.
+
+4. VERSION AND CONFIGURATION COMMANDS
+git --version
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+git config --list
+
+5. BASIC GIT COMMANDS
+git init
+git add <file>
+git commit -m "message"
+git push origin <branch>
+git pull origin <branch>
+git branch
+git checkout <branch>
+git merge <branch>
+git rm <file>
+cd <directory>
+
+
+DEFAULT BRANCH IN GIT
+By default, Git creates a branch named `master` when initializing a new repository. However, in modern versions, Git defaults to the `main` branch instead. The default branch can be changed using:
+git branch -M <new-default-branch>
