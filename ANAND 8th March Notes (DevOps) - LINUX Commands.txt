@@ -1,0 +1,100 @@
+pwd : Prints the current working directory  
+
+ls -l /C/Users/91950/Desktop/Puropale_IT/linux : Lists files in the specified directory in long format  
+
+cd /C/Users/91950/Desktop/Puropale_IT/linux : Changes the directory to the specified path  
+
+ls -a : Lists all files, including hidden files  
+
+mkdir new_folder : Creates a new directory called new_folder
+  
+cd new_folder : Moves into the new_folder directory  
+
+touch new_file.txt : Creates a new, empty file named new_file.txt  
+
+ls -l : Lists files in the current directory in long format  
+
+echo "Hello, Linux" > file2.txt : Writes "Hello, Linux" to file2.txt  
+
+cat file2.txt : Displays the content of file2.txt  
+
+cp file2.txt backup_file2.txt : Copies file2.txt to backup_file2.txt  
+
+mv backup_file2.txt renamed_file2.txt : Renames backup_file2.txt to renamed_file2.txt  
+
+rm renamed_file2.txt : Deletes renamed_file2.txt  
+
+mkdir test_folder1 test_folder2 : Creates two directories test_folder1 and test_folder2  
+
+rmdir test_folder2 : Removes an empty directory test_folder2  
+
+rm -r test_folder1 : Deletes test_folder1 and its contents recursively  
+
+find /C/Users/91950/Desktop/Puropale_IT/linux -type f -name "file2.txt" : Finds file2.txt in the specified directory  
+
+find /home/ec2-user/folder1 -type f : Lists all files in /home/ec2-user/folder1  
+
+stat file2.txt : Displays detailed information about file2.txt  
+
+file file2.txt : Identifies the file type of file2.txt  
+
+ls -l /home/ec2-user/folder1/file2.txt : Shows permissions of file2.txt  
+
+chmod 644 file2.txt : Sets read/write for the owner read-only for others  
+
+chmod +x file2.txt : Grants execute permission to file2.txt  
+
+chown ec2-user:ec2-user file2.txt : Changes ownership to ec2-user  
+
+sudo chown -R ec2-user:ec2-user /home/ec2-user/folder1 : Changes ownership recursively  
+
+ping -c 4 15.206.148.253 : Sends 4 ping packets to the EC2 instance  
+
+hostname : Displays the system’s hostname  
+
+who : Shows who is logged into the system  
+
+w : Displays active users and their activities  
+
+uptime : Shows system uptime  
+
+scp -i "/c/Users/91950/Puropale_IT/linux/linux-key.pem" file2.txt ec2-user@15.206.148.253:/home/ec2-user/folder1/ : Copies file2.txt from your local system to the EC2 instance  
+
+scp -i "/c/Users/91950/Puropale_IT/linux/linux-key.pem" ec2-user@15.206.148.253:/home/ec2-user/file2.txt . : Downloads file2.txt from EC2 to the current local directory  
+
+ssh -i "/c/Users/91950/Puropale_IT/linux/linux-key.pem" ec2-user@15.206.148.253 : Connects to the EC2 instance via SSH  
+
+head -n 5 file2.txt : Displays the first 5 lines of file2.txt  
+
+tail -n 5 file2.txt : Displays the last 5 lines of file2.txt  
+
+grep "command" file2.txt : Searches for "command" in file2.txt  
+
+grep -in "command" file2.txt : Searches for "command" case-insensitive and shows line numbers  
+
+grep -v "command" file2.txt : Shows lines that do not contain "command"  
+
+sed 's/Linux/Unix/g' file2.txt : Replaces "Linux" with "Unix" in file2.txt  
+
+awk '{print $1}' file2.txt : Prints the first column of file2.txt  
+
+
+ps aux | grep ec2-user : Displays processes related to ec2-user  
+
+top : Shows real-time system resource usage  
+
+kill -9 <PID> : Terminates a process by its ID <PID> should be replaced with an actual process ID  
+
+df -h : Displays disk space usage in a human-readable format  
+
+du -sh /home/ec2-user/folder1/ : Shows the total size of folder1  
+
+tar -cvf backup.tar file2.txt : Creates a tar archive of file2.txt  
+
+gzip backup.tar : Compresses backup.tar to backup.tar.gz  
+
+gunzip backup.tar.gz : Decompresses backup.tar.gz  
+
+tar -xvf backup.tar : Extracts files from backup.tar  
+
+history | tail -20 : Displays the last 20 executed commands  
